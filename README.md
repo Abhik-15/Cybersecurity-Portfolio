@@ -1,9 +1,17 @@
 # Cybersecurity-Portfolio by Abhi Kaushik
 
-This repository contains my learning journey and projects in ethical hacking, red team, and scripting. It includes:
+# 🚩 Red Team Journey
 
-- 📜 Writeups for vulnerable machines (TryHackMe & HackTheBox)
-- 🛠️ Custom Bash tools for recon & scanning
-- 🧪 Nmap and Wireshark usage samples
+Welcome! This repo documents my path into red teaming and offensive cybersecurity.
 
-Follow along as I transition into a cybersecurity career!
+## 🧪 Writeups
+Walkthroughs for vulnerable machines (TryHackMe, HTB, VulnHub, and my own).
+
+## 🔧 Tools
+Notes and usage tips for hacking tools (Nmap, Gobuster, LinPEAS, etc.)
+
+## 📚 Notes
+Concepts and real-world attack techniques — from XSS to SSH tunneling.
+
+## 🛠️ Custom Vulnerable Machines
+I design and configure intentionally vulnerable VMs to deepen my skills.
