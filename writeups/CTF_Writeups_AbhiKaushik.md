@@ -6,7 +6,7 @@
 ### Objective
 Perform reconnaissance, scanning, and enumeration on the target to collect all available flags without privilege escalation.
 
----
+
 
 ### Step 1: Discovering Hidden Paths
 
@@ -17,7 +17,7 @@ curl http://192.168.x.x/robots.txt
 **Output:**
 User-agent: *
 Disallow: /.hidden/
-```
+
 
 Discovered hidden directory from `robots.txt`.
 
@@ -63,7 +63,7 @@ Used provided credentials:
 
 **Command:**
 
-ssh ctfplayer@<target-ip>
+ssh ctfplayer@192.168.x.x
 cat ~/flag3.txt
 # FLAG{user_login_success}
 
