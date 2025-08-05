@@ -1,15 +1,15 @@
 
 ---
 
-## 🕵️‍♂️ CTF 2: The Insider’s Leak (Live Run)
+##  CTF 2: The Insider’s Leak (Live Run)
 
-### 🎯 Objective
+###  Objective
 
 Follow the clues left behind by a disgruntled insider and uncover sensitive data using web, FTP, SMB, and SSH enumeration.
 
 ---
 
-### 🧩 Step 1: Web Recon
+###  Step 1: Web Recon
 
 **Command:**
 ```bash
@@ -29,7 +29,7 @@ curl http://<target-ip>/leaks/flag1.txt
 
 ---
 
-### 🔍 Step 2: HTML Source Analysis
+###  Step 2: HTML Source Analysis
 
 **Command:**
 ```bash
@@ -42,7 +42,7 @@ curl http://<target-ip>/leaks/index.html
 
 ---
 
-### 📦 Step 3: FTP Access
+###  Step 3: FTP Access
 
 **Command:**
 ```bash
@@ -61,7 +61,7 @@ username:sshuser
 
 ---
 
-### 🗂️ Step 4: SMB Enumeration
+###  Step 4: SMB Enumeration
 
 **Command:**
 ```bash
@@ -81,7 +81,7 @@ FLAG{smb_enum_success}
 
 ---
 
-### 🔐 Step 5: SSH Login
+###  Step 5: SSH Login
 
 **Command:**
 ```bash
@@ -97,7 +97,7 @@ FLAG{access_granted}
 
 ---
 
-### ✅ CTF Summary
+### CTF Summary
 
 | Step | Technique | Flag |
 |------|-----------|------|
@@ -110,3 +110,4 @@ FLAG{access_granted}
 ---
 
 > 🚀 Completed live by Abhi Kaushik
+> Writeup formatted with the help of AI to document my personal learning experience.
