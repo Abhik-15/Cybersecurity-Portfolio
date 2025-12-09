@@ -1,0 +1,85 @@
+# Network Discovery – Scanta-Clause CTF Write-Up
+
+## 1. Initial Recon – Nmap Scan
+Performed a default Nmap scan on the target `10.49.134.100` to check top 1000 ports.
+
+**Results:**
+- 22/tcp – SSH
+- 80/tcp – HTTP
+
+Ran full port scan:
+
+nmap -p- 10.49.134.100
+
+**Additional open ports:**
+- 21212/tcp – vsFTPd 3.0.5
+- 25251/tcp – TBFC maintd v0.2
+
+---
+
+## 2. FTP Enumeration – Port 21212
+Connected to FTP service:
+
+ftp 10.49.134.100 21212
+
+
+- Anonymous login allowed.
+- `ls` command not working initially → switched off passive mode:
+
+pasv
+
+
+**First key retrieved:**  
+`KEY1: 3aster_`
+
+---
+
+## 3. Unknown Service – Port 25251
+Checked service using netcat:
+
+nc 10.49.134.100 25251
+
+
+- Banner: TBFC maintd v0.2
+- Used command `GET KEY`
+
+**Second key retrieved:**  
+`KEY2: 15_th3_`
+
+---
+
+## 4. DNS Enumeration – Port 53 (UDP)
+UDP scan revealed DNS service.
+
+Queried TXT record:
+
+dig @10.49.134.100 TXT key3.tbfc.local
+
+
+**Third key retrieved:**  
+`KEY3: n3w_xm45`
+
+---
+
+## 5. Web Application – HTTP (Port 80)
+- Entered all three keys on the web page.
+- Admin Console unlocked.
+- Discovered MySQL port open: 3306/tcp
+
+---
+
+## 6. MySQL Enumeration – Port 3306
+Accessed MySQL:
+
+mysql 
+
+
+- `show databases;` → `tbfc_tables`
+- `show tables;` → `flags`
+- `select * from flags;` → final flag
+
+---
+
+## Summary
+- Tools used: `nmap`, `ftp`, `nc`, `dig`, `mysql`  
+- Skills practiced: Network scanning, service enumeration, DNS enumeration, web authentication, MySQL data extraction
